@@ -113,3 +113,11 @@ June 19, 2024 (Wednesday)
 June 20, 2024 (Thursday)
 - Conduct final testing and debugging on the web server.
 - Ensure the application is stable and ready for use.
+
+June 21, 2024 (Friday)
+-Refine the user interface based on user feedback.
+-Ensure a user-friendly and intuitive experience for both catalog browsing and user management functionalities.
+
+June 22, 2024 (Saturday)
+-Include instructions on using the system's features (borrowing, returning, managing accounts etc.).
+-Conduct security testing to identify vulnerabilities.
