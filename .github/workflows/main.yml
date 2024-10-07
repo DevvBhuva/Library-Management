@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  deploy-backend:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,12 +18,30 @@ jobs:
       with:
         node-version: '16'
 
-    - name: Install dependencies
+    - name: Install backend dependencies
+      working-directory: ./Backend
       run: npm install
 
-    - name: Build project
+    - name: Build backend
+      working-directory: ./Backend
       run: npm run build
 
-    - name: Deploy to server
-      run: |
-        ssh user@your-server "cd /path/to/project && git pull && npm install && npm run build"
+  deploy-frontend:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    - name: Install frontend dependencies
+      working-directory: ./Frontend
+      run: npm install
+
+    - name: Build frontend
+      working-directory: ./Frontend
+      run: npm run build
